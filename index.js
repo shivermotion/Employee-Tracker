@@ -6,6 +6,12 @@ const fs = require("fs");
 const promptUser = () => {
 	return inquirer.prompt([
 		{
+			type: "confirm",
+			name: "continue",
+			message: "Welcome to the Employee-Tracker :) \n     Press Enter to Continue:",
+			properties: "default",
+		},
+		{
 			type: "list",
 			message: "What would you like to do?",
 			name: "choices",
