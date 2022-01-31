@@ -1,39 +1,64 @@
-const express = require("express");
-// Import and require mysql2
-const mysql = require("mysql2");
+//import tools/components/functions
+const inquirer = require("inquirer");
+const fs = require("fs");
+const cTable = require("console.table");
+const { db } = require("./config/connection");
+//function components
+const showAllDepartments = require("./functions/showDepts");
+const showAllRoles = require("./functions/showAllRoles");
+const showAllEmployees = require("./functions/showAllEmployees");
+const addDepartment = require("./functions/addDepartment");
+const addRole = require("./functions/addRole");
+const addEmployee = require("./functions/addEmployee");
+const updateEmployeeRole = require("./functions/updateEmployeeRole");
 
-const PORT = process.env.PORT || 3001;
-const app = express();
+// Call Prompt
+const promptUser = () => {
+	return inquirer
+		.prompt([
+			{
+				name: "menuChoices",
+				type: "list",
+				message: "Welcome to Employee-Tracker",
+				choices: [
+					"View all departments",
+					"View all roles",
+					"View all employees",
+					"Add a department",
+					"Add a role",
+					"Add an employee",
+					"Update employee role",
+					"EXIT",
+				],
+			},
+		])
+		.then((response) => {
+			switch (response.menuChoices) {
+				case "View all departments":
+					showAllDepartments();
+					break;
+				case "View all roles":
+					//showAllRoles()
+					break;
+				case "View all employees":
+					//showAllEmployees()
+					break;
+				case "Add a department":
+					//addDepartment()
+					break;
+				case "Add a role":
+					//addRole()
+					break;
+				case "Add an employee":
+					//addEmployee()
+					break;
+				case "Update employee role":
+					//updateEmployeeRole()
+					break;
+				case "EXIT":
+					process.exit();
+			}
+		});
+};
 
-// Express middleware
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-
-// Connect to database
-const db = mysql.createConnection(
-	{
-		host: "localhost",
-		// MySQL username,
-		user: "root",
-		// MySQL password
-		password: "",
-		database: "employee_db",
-	},
-	console.log(`Connected to the employee_db database.`)
-);
-
-// Query database
-db.query("SELECT * FROM department", function (err, results) {
-	console.table({
-		results,
-	});
-});
-
-// Default response for any other request (Not Found)
-app.use((req, res) => {
-	res.status(404).end();
-});
-
-app.listen(PORT, () => {
-	console.log(`Server running on port ${PORT}`);
-});
+promptUser();
