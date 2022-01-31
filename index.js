@@ -1,31 +1,53 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-
-// Use writeFileSync method to use promises instead of a callback function
+const cTable = require("console.table");
 
 const promptUser = () => {
-	return inquirer.prompt([
-		{
-			type: "confirm",
-			name: "continue",
-			message: "Welcome to the Employee-Tracker :) \n     Press Enter to Continue:",
-			properties: "default",
-		},
-		{
-			type: "list",
-			message: "What would you like to do?",
-			name: "choices",
-			choices: [
-				"view all departments",
-				"view all roles",
-				"view all employees",
-				"add a department",
-				"add a role",
-				"add an employee",
-				"update employee role",
-			],
-		},
-	]);
+	return inquirer
+		.prompt([
+			{
+				name: "menuChoices",
+				type: "list",
+				message: "Welcome to Employee-Tracker",
+				choices: [
+					"View all departments",
+					"View all roles",
+					"View all employees",
+					"Add a department",
+					"Add a role",
+					"Add an employee",
+					"Update employee role",
+					"EXIT",
+				],
+			},
+		])
+		.then((response) => {
+			switch (response.menuChoices) {
+				case "View all departments":
+					//showAlldepartments()
+					break;
+				case "View all roles":
+					//showAllRoles()
+					break;
+				case "View all employees":
+					//showAllEmployees()
+					break;
+				case "Add a department":
+					//addDepartment()
+					break;
+				case "Add a role":
+					//addRole()
+					break;
+				case "Add an employee":
+					//addEmployee()
+					break;
+				case "Update employee role":
+					//updateEmployeeRole()
+					break;
+				case "EXIT":
+					process.exit();
+			}
+		});
 };
 
 promptUser();

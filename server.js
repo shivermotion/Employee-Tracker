@@ -23,8 +23,10 @@ const db = mysql.createConnection(
 );
 
 // Query database
-db.query("SELECT * FROM students", function (err, results) {
-	console.log(results);
+db.query("SELECT * FROM department", function (err, results) {
+	console.table({
+		results,
+	});
 });
 
 // Default response for any other request (Not Found)
