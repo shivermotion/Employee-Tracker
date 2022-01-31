@@ -3,14 +3,6 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const cTable = require("console.table");
 const { db } = require("./config/connection");
-//function components
-const showAllDepartments = require("./functions/showDepts");
-const showAllRoles = require("./functions/showAllRoles");
-const showAllEmployees = require("./functions/showAllEmployees");
-const addDepartment = require("./functions/addDepartment");
-const addRole = require("./functions/addRole");
-const addEmployee = require("./functions/addEmployee");
-const updateEmployeeRole = require("./functions/updateEmployeeRole");
 
 // Call Prompt
 const promptUser = () => {
@@ -38,27 +30,51 @@ const promptUser = () => {
 					showAllDepartments();
 					break;
 				case "View all roles":
-					//showAllRoles()
+					showAllRoles();
 					break;
 				case "View all employees":
-					//showAllEmployees()
+					showAllEmployees();
 					break;
 				case "Add a department":
-					//addDepartment()
+					addDepartment();
 					break;
 				case "Add a role":
-					//addRole()
+					addRole();
 					break;
 				case "Add an employee":
-					//addEmployee()
+					addEmployee();
 					break;
 				case "Update employee role":
-					//updateEmployeeRole()
+					updateEmployeeRole();
 					break;
 				case "EXIT":
+					console.log(
+						"exiting Employee-Tracker..."
+					);
 					process.exit();
 			}
 		});
 };
 
 promptUser();
+
+async function showAllDepartments() {
+	console.table("test response");
+	promptUser();
+}
+async function showAllRoles() {
+	console.table("test response");
+	promptUser();
+}
+async function showAllEmployees() {
+	console.table("test response");
+	promptUser();
+}
+async function addDepartment() {
+	console.table("test response");
+	promptUser();
+}
+async function updateEmployeeRole() {
+	console.table("test response");
+	promptUser();
+}

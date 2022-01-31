@@ -6,13 +6,13 @@ CREATE DATABASE employee_db;
 USE employee_db;
 
 -- Creates the table "department" within employee_db --
-CREATE TABLE department (
+CREATE TABLE departments (
   id INT PRIMARY KEY,
   department_name VARCHAR(30),
  
 );
 -- Creates the table "role_title" within employee_db --
-CREATE TABLE role_title (
+CREATE TABLE roles (
   id INT PRIMARY KEY,
   title VARCHAR(30),
   salary DECIMAL
@@ -20,7 +20,7 @@ CREATE TABLE role_title (
  
 );
 -- Creates the table "employee" within employee_db --
-CREATE TABLE employee (
+CREATE TABLE employees (
   id INT PRIMARY KEY,
   first_name VARCHAR(30),
   last_name VARCHAR(30),

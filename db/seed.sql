@@ -6,7 +6,7 @@ VALUES (001, "Information Technology"),
 SELECT * FROM department
 
 
-INSERT INTO role_data (id, title, salary, department_id)
+INSERT INTO roles (id, title, salary, department_id)
 VALUES (010, "Chief Information Security Officer", 200000, 001),
        (020, "Sales Executive", 70000, 002),
        (030, "Account Executive", 80000, 003),
