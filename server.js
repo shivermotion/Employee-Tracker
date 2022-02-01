@@ -134,3 +134,13 @@ async function updateEmployeeRole() {
 	console.table("test response");
 	promptUser();
 }
+
+// // Query database
+// let deletedRow = 2;
+
+// db.query(`DELETE FROM favorite_books WHERE id = ?`, deletedRow, (err, result) => {
+//   if (err) {
+//     console.log(err);
+//   }
+//   console.log(result);
+// });
