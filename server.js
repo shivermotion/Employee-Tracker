@@ -103,6 +103,7 @@ promptUser();
 //view all
 async function showAllDepartments() {
 	db.query("SELECT * FROM departments", function (err, results) {
+		console.log("\n");
 		console.table(results);
 	});
 
@@ -110,12 +111,14 @@ async function showAllDepartments() {
 }
 async function showAllRoles() {
 	db.query("SELECT * FROM roles", function (err, results) {
+		console.log("\n");
 		console.table(results);
 	});
 	promptUser();
 }
 async function showAllEmployees() {
 	db.query("SELECT * FROM employees", function (err, results) {
+		console.log("\n");
 		console.table(results);
 	});
 	promptUser();
