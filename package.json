@@ -2,7 +2,7 @@
   "name": "Employee-Tracker",
   "version": "1.0.0",
   "description": "<img width=\"948\" alt=\"12-sql-homework-demo-01\" src=\"https://user-images.githubusercontent.com/75548830/146315549-91a0ca22-3c35-4c79-9144-8f4ccaed74a8.png\">",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
