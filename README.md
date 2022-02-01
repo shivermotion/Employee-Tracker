@@ -2,7 +2,7 @@
 
 <img width="948" alt="12-sql-homework-demo-01" src="https://user-images.githubusercontent.com/75548830/146315549-91a0ca22-3c35-4c79-9144-8f4ccaed74a8.png">
 
-## Repo Link: https://github.com/shivermotion/Employee-Tracker Screencastify:
+## Repo Link: https://github.com/shivermotion/Employee-Tracker Screencastify:https://watch.screencastify.com/v/fWDNFHyzOKOkVOLwfIg6
 
 # Table of Content
 
